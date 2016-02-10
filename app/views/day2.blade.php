@@ -1005,7 +1005,7 @@ function day2($input)
 {
 	$presentPaper = 0;
 
-	foreach(explode('\n', $input) as $present){
+	foreach(explode("\n", $input) as $present){
 		$present = explode('x', $present);
 		$area = array($present[0]*$present[1]*2, $present[1]*$present[2]*2, $present[0]*$present[2]*2);
 		sort($area);
