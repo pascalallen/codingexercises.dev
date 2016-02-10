@@ -3,9 +3,21 @@
 
 		function day3($input)
 		{
-			
-			return
-		}
+			$house = str_split(count_chars($input, 3));
+			$gift = 0;
+			for($i = 0; $i < strlen($input); $i++){
+				if($house[0] == '<'){
+					$gift += 1;
+				} else if($house[1] == '>'){
+					$gift += 1;
+				} else if($house[2] == '^'){
+					$gift += 1;
+				} else if($house[3] == 'v'){
+					$gift += 1;
+				}
+			}
+			return var_dump($gift);
+		};
 	?>
 
 	{{{ day3($input) }}}
