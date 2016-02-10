@@ -1003,13 +1003,15 @@
 
 function day2($input)
 {
-	$presents = explode(PHP_EOL, $input);
 	$presentPaper = 0;
 
-	foreach($presents as $present){
+	foreach(explode('\n', $input) as $present){
 		$present = explode('x', $present);
-		$presentPaper = 2 * $present[0] * $present[1] + 2 * $present[1] * $present[2] + 2 * $present[2] * $present[0];
-		$presentPaper += 2 * $present[0] * $present[1];
+		$area = array($present[0]*$present[1]*2, $present[1]*$present[2]*2, $present[0]*$present[2]*2);
+		sort($area);
+		$presentPaper += array_sum($area) + ($area[0]/2);
+		// $presentPaper += 2 * $present[0] * $present[1] + 2 * $present[1] * $present[2] + 2 * $present[2] * $present[0];
+		// $presentPaper += 2 * $present[0] * $present[1];
 	}
 	return $presentPaper;
 }
